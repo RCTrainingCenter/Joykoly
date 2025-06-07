@@ -48,6 +48,7 @@
 
 .product-title {
   font-size: 2rem;
+  font-family: 'Bangla', sans-serif;
   font-weight: 800;
   color: #2d3748;
   margin-bottom: 0.2rem;
@@ -66,12 +67,14 @@
 
 .product-rating span {
   color: #6366f1;
+  font-family: 'Bangla', sans-serif;
   font-weight: 600;
   font-size: 1.1rem;
 }
 
 .product-price {
   color: #f43f5e;
+  font-family: 'Bangla', sans-serif;
   font-size: 1.7rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
@@ -79,6 +82,7 @@
 
 .product-description {
   color: #4a5568;
+  font-family: 'Bangla', sans-serif;
   font-size: 1.1rem;
   margin-bottom: 0.5rem;
 }

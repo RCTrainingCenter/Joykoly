@@ -3,6 +3,7 @@ import { TbTruckDelivery } from 'react-icons/tb'
 import { HiOutlineCurrencyDollar } from 'react-icons/hi2'
 import { BiSupport } from 'react-icons/bi'
 import { MdOutlinePayment } from 'react-icons/md'
+import './ServicesTag.css'
 
 const services = [
   {
@@ -29,16 +30,16 @@ const services = [
 
 const ServicesTag = () => {
   return (
-    <div className='bg-[#f3f4f6] p-5 rounded-lg'>
-      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 place items-center md:place-items-start'>
+    <div className='services-container'>
+      <div className='services-grid'>
         {services?.map((item, index) => (
-          <div key={index} className='flex item-center gap-2'>
-            <span className='text-5xl text-blue-600'>{item?.icon}</span>
-            <div>
-              <h3 className='text-base uppercase font-bold'>{item?.title}</h3>
-              <p className='text-sm font-medium max-w-[160px] tracking-wide'>
-                {item?.subtitle}
-              </p>
+          <div key={index} className='service-item'>
+            <div className='icon-container'>
+              {item?.icon}
+            </div>
+            <div className='service-content'>
+              <h3 className='service-title'>{item?.title}</h3>
+              <p className='service-subtitle'>{item?.subtitle}</p>
             </div>
           </div>
         ))}

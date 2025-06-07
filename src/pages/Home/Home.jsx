@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from 'react'
+import React, { useState } from 'react'
 import './Home.css'
 import Header from '../../components/Header/Header'
 import Sale from '../../components/Sale/Sale'
@@ -10,6 +10,10 @@ import { assets } from '../../assets/assets'
 import { StoreContext } from '../../components/context/StoreContext'
 import { Link } from 'react-router-dom'
 import FoodItem from '../../components/FoodItem/FoodItem'
+import Academy from '../../components/Academy/Academy'
+import Video from '../../components/Video/Video'
+import QuestionDataSection from '../../components/QuestionDataSection/QuestionDataSection'
+import NewArrivals from '../../components/NewArrivals/NewArrivals'
 
 const blogPosts = [
   {
@@ -38,51 +42,6 @@ const blogPosts = [
   },
 ]
 
-// NewArrivalsGrid component (replaces slider)
-const NewArrivalsGrid = () => {
-  const { url, food_list } = useContext(StoreContext)
-  const [arrivals, setArrivals] = useState([])
-  const [current, setCurrent] = useState(0)
-
-  useEffect(() => {
-    fetch(url + '/api/food/newarrivals')
-      .then(res => res.ok ? res.json() : Promise.reject())
-      .then(data => setArrivals((data.data || []).slice(0, 10)))
-      .catch(() => {
-        setArrivals(food_list.slice(0, 10))
-      })
-  }, [url, food_list])
-
-  // Auto-slide logic
-  useEffect(() => {
-    if (arrivals.length <= 5) return;
-    const interval = setInterval(() => {
-      setCurrent(prev => (prev + 5 >= arrivals.length ? 0 : prev + 5))
-    }, 3000)
-    return () => clearInterval(interval)
-  }, [arrivals])
-
-  const visible = arrivals.slice(current, current + 5)
-
-  return (
-    <div className='new-arrivals-grid'>
-      <h2 className='new-arrivals-title'>New Arrivals</h2>
-      <div className='Food-display-list new-arrivals-slider-list'>
-        {visible.map((item, idx) => (
-          <FoodItem
-            key={item._id || idx}
-            id={item._id}
-            name={item.name}
-            // description={item.description}
-            price={item.price}
-            image={item.image}
-          />
-        ))}
-      </div>
-    </div>
-  )
-}
-
 const Home = () => {
   const [category, setCategory] = useState('All')
   return (
@@ -91,7 +50,14 @@ const Home = () => {
       <ServicesTag />
       <br />
       <Sale />
-      <NewArrivalsGrid />
+      <br />
+      <QuestionDataSection />
+      <br />
+      <NewArrivals />
+      <br />
+      <Academy />
+      <br />
+      <Video />
 
       {/* Blog Preview Section */}
       <div className='home-blog-preview'>

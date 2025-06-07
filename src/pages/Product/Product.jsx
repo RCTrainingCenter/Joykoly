@@ -30,7 +30,7 @@ const Product = () => {
             <img src={assets.rating_starts} alt="Rating" />
             <span>4.8 (120 reviews)</span>
           </div>
-          <p className="product-price">৳{product.price}</p>
+          <p className="product-price">৳{product.price.toLocaleString('bn-BD')}</p>
           <p className="product-description">{product.description}</p>
           <ul className="product-highlights">
             <li>✅🚚 Fast delivery available</li>

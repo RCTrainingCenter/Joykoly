@@ -38,7 +38,7 @@ const MyOrders = () => {
                   }
                 })}
               </p>
-              <p>৳{order.amount}.00</p>
+              <p>৳{order.amount.toLocaleString('bn-BD')}</p>
               <p>Items: {order.items.length}</p>
               <p>
                 <span>&#x25cf;</span>

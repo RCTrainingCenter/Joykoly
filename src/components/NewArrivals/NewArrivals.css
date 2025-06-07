@@ -1,0 +1,287 @@
+/* Main Container Styles */
+.new-arrivals-container {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 50%, #f8f9fa 100%);
+  animation: gradientShift 15s ease infinite;
+  font-family: 'Bangla', sans-serif;
+}
+
+/* Gradient Background Animation */
+.new-arrivals-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, #e0e7ff, #c7d2fe, #e0e7ff);
+  background-size: 200% 200%;
+  animation: gradientBG 15s ease infinite;
+  z-index: -1;
+}
+
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Title Animation */
+.new-arrivals-title {
+  position: relative;
+  display: inline-block;
+  font-family: 'Bangla', sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  background: linear-gradient(135deg, #1a237e 0%, #283593 50%, #303f9f 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.new-arrivals-title::after {
+  content: '';
+  position: absolute;
+  font-family: 'Bangla', sans-serif;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #4f46e5, #3b82f6);
+  transition: width 0.3s ease;
+}
+
+.new-arrivals-title:hover::after {
+  width: 100%;
+}
+
+/* Navigation Buttons */
+.nav-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(79, 70, 229, 0.1);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s ease, height 0.3s ease;
+}
+
+.nav-button:hover::before {
+  width: 100%;
+  height: 100%;
+}
+
+/* Progress Dots */
+.progress-dot {
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.progress-dot:hover {
+  transform: scale(1.2);
+}
+
+.progress-dot.active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 3px;
+  background: linear-gradient(90deg, #4f46e5, #3b82f6);
+  border-radius: 2px;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Progress Bar */
+.progress-bar-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.progress-bar-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transform: translateX(-100%);
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Book Cards */
+.book-card {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.book-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.1));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.book-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.book-card:hover::before {
+  opacity: 1;
+}
+
+/* View All Button */
+.view-all-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.view-all-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.view-all-button:hover::before {
+  left: 100%;
+}
+
+/* Loading Spinner */
+.loading-spinner {
+  position: relative;
+}
+
+.loading-spinner::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border: 2px solid transparent;
+  border-top-color: #4f46e5;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Tooltip */
+.tooltip {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+}
+
+.tooltip::before {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 4px solid rgba(0, 0, 0, 0.8);
+}
+
+.tooltip.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .new-arrivals-container {
+    padding: 2rem 1rem;
+  }
+
+  .book-card {
+    margin: 0.5rem;
+  }
+
+  .progress-dot {
+    width: 8px;
+    height: 8px;
+  }
+}
+
+/* Custom Scrollbar */
+.new-arrivals-container::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.new-arrivals-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.new-arrivals-container::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #4f46e5, #3b82f6);
+  border-radius: 4px;
+}
+
+.new-arrivals-container::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, #4338ca, #2563eb);
+} 
