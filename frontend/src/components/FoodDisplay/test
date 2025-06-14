@@ -1,0 +1,31 @@
+import React, { useContext } from 'react'
+import './FoodDisplay.css'
+import { StoreContext } from '../context/StoreContext'
+import FoodItem from '../FoodItem/FoodItem'
+
+const FoodDisplay = ({ category, search = '' }) => {
+  const { food_list } = useContext(StoreContext)
+
+  // Filter by category and search
+  const filteredList = food_list.filter((item) => {
+    const matchesCategory = category === 'All' || item.category === category
+    const matchesSearch = item.name.toLowerCase().includes(search)
+    return matchesCategory && matchesSearch
+  })
+
+  return (
+    <div className='Book-display' id='Book-display'>
+      <div className='Book-display-list'>
+        {filteredList.length === 0 ? (
+          <div style={{ padding: 40, textAlign: 'center' }}>
+            No products found.
+          </div>
+        ) : (
+          filteredList.map((item) => <FoodItem key={item._id} {...item} />)
+        )}
+      </div>
+    </div>
+  )
+}
+
+export default FoodDisplay

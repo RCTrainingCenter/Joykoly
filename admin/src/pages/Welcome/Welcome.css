@@ -1,0 +1,188 @@
+.welcome-container {
+    padding: 30px;
+    width: 100%;
+    min-height: calc(100vh - 100px);
+    background: #f8fafc;
+}
+
+.welcome-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.welcome-header {
+    text-align: center;
+    margin-bottom: 50px;
+    padding: 30px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.welcome-logo {
+    width: 120px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.welcome-logo:hover {
+    transform: scale(1.05);
+}
+
+.welcome-header h1 {
+    color: #1a2a6c;
+    font-size: 32px;
+    margin-bottom: 10px;
+    font-weight: 800;
+}
+
+.welcome-header p {
+    color: #4a5568;
+    font-size: 18px;
+}
+
+.welcome-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.stat-card {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(135deg, #1a2a6c, #b21f1f);
+    color: white;
+}
+
+.stat-card:hover img {
+    transform: scale(1.1);
+}
+
+.stat-card:hover h3,
+.stat-card:hover p {
+    color: white;
+}
+
+.stat-card img {
+    width: 60px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.stat-card h3 {
+    color: #1a2a6c;
+    font-size: 20px;
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+}
+
+.stat-card p {
+    color: #4a5568;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.card-hover-text {
+    position: absolute;
+    bottom: -30px;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 8px;
+    font-size: 14px;
+    color: #1a2a6c;
+    transition: bottom 0.3s ease;
+}
+
+.stat-card:hover .card-hover-text {
+    bottom: 0;
+}
+
+.welcome-footer {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.welcome-footer p {
+    color: #1a2a6c;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.quick-links {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.quick-link-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 24px;
+    background: #1a2a6c;
+    color: white;
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.quick-link-btn img {
+    width: 20px;
+    height: 20px;
+    filter: brightness(0) invert(1);
+}
+
+.quick-link-btn:hover {
+    background: #2d4a9c;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(26, 42, 108, 0.2);
+}
+
+@media (max-width: 768px) {
+    .welcome-container {
+        padding: 20px;
+    }
+
+    .welcome-header {
+        padding: 20px;
+    }
+
+    .welcome-header h1 {
+        font-size: 24px;
+    }
+
+    .welcome-header p {
+        font-size: 16px;
+    }
+
+    .stat-card {
+        padding: 20px;
+    }
+
+    .quick-links {
+        flex-direction: column;
+    }
+
+    .quick-link-btn {
+        width: 100%;
+        justify-content: center;
+    }
+} 
