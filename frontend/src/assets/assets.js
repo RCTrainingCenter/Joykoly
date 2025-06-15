@@ -52,6 +52,9 @@ import play_store from './play_store.png'
 import linkedin_icon from './linkedin_icon.png'
 import facebook_icon from './facebook_icon.png'
 import twitter_icon from './twitter_icon.png'
+import bkash from './bkash.png'
+import nagod from './nagod.png'
+import rocket from './rocket.png'
 import cross_icon from './cross_icon.png'
 import selector_icon from './selector_icon.png'
 import rating_starts from './rating_starts.png'
@@ -80,6 +83,9 @@ export const assets = {
   linkedin_icon,
   facebook_icon,
   twitter_icon,
+  bkash,
+  nagod,
+  rocket,
   cross_icon,
   selector_icon,
   profile_icon,
