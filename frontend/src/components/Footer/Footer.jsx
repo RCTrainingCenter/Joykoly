@@ -73,6 +73,30 @@ const Footer = () => {
           <ul>
             <li>+01-678-343-450</li>
             <li>info.joykoly@gmail.com</li>
+            <h2>Payment Method</h2>
+            <div className='footer-payment-icons'>
+            <a
+              href='https://www.bkash.com'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              <img src={assets.bkash} alt='Facebook' />
+            </a>
+            <a
+              href='https://www.nagad.com.bd/'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              <img src={assets.nagod} alt='Twitter' />
+            </a>
+            <a
+              href='https://www.dutchbanglabank.com/rocket/rocket.html'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              <img src={assets.rocket} alt='LinkedIn' />
+            </a>
+          </div>
           </ul>
         </div>
       </div>
