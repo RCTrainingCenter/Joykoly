@@ -109,20 +109,44 @@
 }
 
 .footer-social-icons img {
-    width: 36px;
-    height: 36px;
+    width: 40px;
+    height: 40px;
     cursor: pointer;
     background: #fff;
     border-radius: 50%;
-    padding: 6px;
+    padding: 4px;
     box-shadow: 0 2px 8px rgba(44, 62, 80, 0.10);
     transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .footer-social-icons img:hover {
     transform: scale(1.15);
-    box-shadow: 0 4px 16px rgba(44, 62, 80, 0.18);
+    box-shadow: 0 10px 16px rgba(44, 62, 80, 0.18);
 }
+
+.footer-payment-icons {
+    display: flex;
+    gap: 0.7rem;
+    margin-top: 0.5rem;
+    
+}
+
+.footer-payment-icons img {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    background: #fff;
+    border-radius: 80%;
+    padding: 2px;
+    box-shadow: 0 2px 8px rgba(44, 62, 80, 0.10);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.footer-payment-icons img:hover {
+    transform: scale(1.15);
+    box-shadow: 0 10px 16px rgba(44, 62, 80, 0.18);
+}
+
 
 .footer-copyright {
     display: flex;
